@@ -13,78 +13,18 @@
     font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
     overflow-x: hidden;
   }
-  .wrap {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 20px;
-    position: relative;
-    z-index: 10;
-  }
-  .section {
-    margin-bottom: 50px;
-    padding: 25px;
-    border-radius: 16px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(3px);
-    box-shadow: 0 0 25px rgba(0,0,0,0.5);
-  }
-  .section p {
-    font-size: 18px;
-    line-height: 1.5;
-  }
-  .media-space {
-    margin-top: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-  }
-  .media-space img, .media-space video {
-    width: 280px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  .highlight {
-    font-size: 32px;
-    font-weight: 800;
-    color: #ffbfd4;
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  /* animación de corazones */
-  .hearts {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: visible;
-    z-index: 0;
-  }
-  .heart {
-    position: absolute;
-    width: 26px;
-    height: 26px;
-    animation: floatUp linear forwards;
-    opacity: 0.9;
-  }
-  .heart::before,
-  .heart::after {
-    content: "";
-    position: absolute;
-    width: 14px;
-    height: 22px;
-    border-radius: 14px 14px 0 0;
-    background: linear-gradient(180deg,#ff6a8f,#ff3b6b);
-    top: 0;
-    left: 7px;
-  }
+  .wrap { max-width: 1000px; margin: 40px auto; padding: 20px; position: relative; z-index: 10; }
+  .section { margin-bottom: 50px; padding: 25px; border-radius: 16px; background: rgba(255,255,255,0.05); backdrop-filter: blur(3px); box-shadow: 0 0 25px rgba(0,0,0,0.5); }
+  .section p { font-size: 18px; line-height: 1.5; }
+  .media-space { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .media-space img, .media-space video { width: 280px; height: 180px; object-fit: cover; border-radius: 10px; }
+  .highlight { font-size: 32px; font-weight: 800; color: #ffbfd4; text-align: center; margin-top: 20px; }
+  .hearts { position: fixed; inset: 0; pointer-events: none; overflow: visible; z-index: 0; }
+  .heart { position: absolute; width: 26px; height: 26px; animation: floatUp linear forwards; opacity: 0.9; }
+  .heart::before, .heart::after { content: ""; position: absolute; width: 14px; height: 22px; border-radius: 14px 14px 0 0; background: linear-gradient(180deg,#ff6a8f,#ff3b6b); top: 0; left: 7px; }
   .heart::before { transform: rotate(-45deg); left: 0; transform-origin: 0 100%; }
   .heart::after { transform: rotate(45deg); left: 14px; transform-origin: 100% 100%; }
-  @keyframes floatUp {
-    0% { transform: translateY(0) scale(0.9); opacity: 0.9; }
-    100% { transform: translateY(-90vh) scale(0.7); opacity: 0; }
-  }
+  @keyframes floatUp { 0% { transform: translateY(0) scale(0.9); opacity: 0.9; } 100% { transform: translateY(-90vh) scale(0.7); opacity: 0; } }
 </style>
 </head>
 <body>
@@ -97,34 +37,34 @@
       pero para mí es más que eso. La madre es la que enseña y da de comer:
     </p>
     <div class="media-space">
-      <img src="enseñar.jpeg" alt="Ajedrez">
-      <img src="cocinar.jpeg" alt="Torta">
-      <img src="comida.jpeg" alt="Pan">
-      
+      <img src="imagenes/ajedrez.jpg" alt="Ajedrez">
+      <img src="imagenes/torta.jpg" alt="Torta">
+      <img src="imagenes/pan.jpg" alt="Pan">
+      <video src="videos/video.mp4" controls muted loop></video>
     </div>
   </div>
 
   <div class="section">
     <p>La que te enseña a aprender de manera correcta:</p>
     <div class="media-space">
-      <img src="ayudando a hacer experiencias.jpeg" alt="Terrario">
+      <img src="imagenes/terrario.jpg" alt="Terrario">
     </div>
   </div>
 
   <div class="section">
     <p>La que da el ejemplo de lo que es una familia:</p>
     <div class="media-space">
-      <img src="aceptar familia no de sangre.jpeg" alt="Aceptar familia no de sangre">
-      <img src="formar una familia.jpeg" alt="Formar una familia">
+      <img src="imagenes/aceptar-familia-no-de-sangre.jpg" alt="Aceptar familia no de sangre">
+      <img src="imagenes/formar-una-familia.jpg" alt="Formar una familia">
     </div>
   </div>
 
   <div class="section">
     <p>La que te cuida, te ama y te enseña a amar:</p>
     <div class="media-space">
-      <img src="pasar tiempo con tus hijos.jpeg" alt="Pasar tiempo con tus hijos">
-      <img src="pasar tiempo con tus hijos2.jpeg" alt="Pasar tiempo con tus hijos 2">
-      <img src="pasar tiempo con tus hijos3.jpeg" alt="Pasar tiempo con tus hijos 3">
+      <img src="imagenes/pasar-tiempo-1.jpg" alt="Pasar tiempo con tus hijos">
+      <img src="imagenes/pasar-tiempo-2.jpg" alt="Pasar tiempo con tus hijos 2">
+      <img src="imagenes/pasar-tiempo-3.jpg" alt="Pasar tiempo con tus hijos 3">
     </div>
   </div>
 
@@ -134,7 +74,7 @@
       te seguirá amando, tratando de ayudarte, enseñarte y cuidarte.
     </p>
     <div class="media-space">
-      <img src="lejos.jpeg" alt="Lejos">
+      <img src="imagenes/lejos.jpg" alt="Lejos">
     </div>
   </div>
 
