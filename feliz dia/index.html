@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>La definición de mamá</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html,body {
+    height: 100%;
+    background: #111;
+    color: #fff;
+    font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+    overflow-x: hidden;
+  }
+  .wrap {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+  }
+  .section {
+    margin-bottom: 50px;
+    padding: 25px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  }
+  .section p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .media-space {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  .media-space img, .media-space video {
+    width: 280px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .highlight {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffbfd4;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* animación de corazones */
+  .hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 0;
+  }
+  .heart {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    animation: floatUp linear forwards;
+    opacity: 0.9;
+  }
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 22px;
+    border-radius: 14px 14px 0 0;
+    background: linear-gradient(180deg,#ff6a8f,#ff3b6b);
+    top: 0;
+    left: 7px;
+  }
+  .heart::before { transform: rotate(-45deg); left: 0; transform-origin: 0 100%; }
+  .heart::after { transform: rotate(45deg); left: 14px; transform-origin: 100% 100%; }
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(0.9); opacity: 0.9; }
+    100% { transform: translateY(-90vh) scale(0.7); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="section">
+    <p>
+      La definición de mamá es la mujer que ha tenido hijos o que ejerce el papel de madre, 
+      pero para mí es más que eso. La madre es la que enseña y da de comer:
+    </p>
+    <div class="media-space">
+      <img src="enseñar.jpeg" alt="Ajedrez">
+      <img src="cocinar.jpeg" alt="Torta">
+      <img src="comida.jpeg" alt="Pan">
+      
+    </div>
+  </div>
+
+  <div class="section">
+    <p>La que te enseña a aprender de manera correcta:</p>
+    <div class="media-space">
+      <img src="ayudando a hacer experiencias.jpeg" alt="Terrario">
+    </div>
+  </div>
+
+  <div class="section">
+    <p>La que da el ejemplo de lo que es una familia:</p>
+    <div class="media-space">
+      <img src="aceptar familia no de sangre.jpeg" alt="Aceptar familia no de sangre">
+      <img src="formar una familia.jpeg" alt="Formar una familia">
+    </div>
+  </div>
+
+  <div class="section">
+    <p>La que te cuida, te ama y te enseña a amar:</p>
+    <div class="media-space">
+      <img src="pasar tiempo con tus hijos.jpeg" alt="Pasar tiempo con tus hijos">
+      <img src="pasar tiempo con tus hijos2.jpeg" alt="Pasar tiempo con tus hijos 2">
+      <img src="pasar tiempo con tus hijos3.jpeg" alt="Pasar tiempo con tus hijos 3">
+    </div>
+  </div>
+
+  <div class="section">
+    <p>
+      Madre no es solo la que te cuida y alimenta, madre es la que a pesar de estar lejos 
+      te seguirá amando, tratando de ayudarte, enseñarte y cuidarte.
+    </p>
+    <div class="media-space">
+      <img src="lejos.jpeg" alt="Lejos">
+    </div>
+  </div>
+
+  <div class="section">
+    <p>
+      Las madres son un rompecabezas, y al tener un hijo les dan sus piezas que son los valores, 
+      las enseñanzas, la manera de enseñar, la manera de amar, para que todas esas piezas no formen una persona igual a ellas, 
+      formen a una persona mejor que ellas.
+    </p>
+    <p>Por estas y más razones es que:</p>
+    <div class="highlight">TE AMO MAMÁ</div>
+  </div>
+
+</div>
+
+<div class="hearts" id="hearts"></div>
+
+<script>
+(function(){
+  const container = document.getElementById('hearts');
+  const HEART_COUNT = 25;
+  function rand(min, max){ return Math.random()*(max-min)+min; }
+
+  for(let i=0;i<HEART_COUNT;i++){
+    const h = document.createElement('div');
+    h.className = 'heart';
+    const size = rand(20, 40);
+    h.style.width = size+'px';
+    h.style.height = size+'px';
+    h.style.left = rand(0, 100)+'vw';
+    h.style.top = rand(80, 110)+'vh';
+    h.style.animationDuration = rand(10, 20)+'s';
+    h.style.animationDelay = rand(-10, 0)+'s';
+    container.appendChild(h);
+    setTimeout(()=>h.remove(), 25000);
+  }
+})();
+</script>
+
+</body>
+</html>
